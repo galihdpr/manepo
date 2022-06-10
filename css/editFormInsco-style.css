@@ -1,0 +1,129 @@
+/* Setting for all */
+*{
+    box-sizing: border-box;
+    margin : 0 auto;
+    padding : 0;
+}
+
+/* Color palate var*/
+:root{
+    --mysticOne : #4663BE;
+    --mysticTwo : #8DBAFE;
+    --mysticThre : #21AEE4;
+    --mysticFour : #85F1FE;
+}
+
+body{
+    font-family:monospace;
+    overflow:hidden;
+    animation-name: fadeEntrance;
+    animation-duration: 2s;
+}
+
+@keyframes fadeEntrance{
+    0%{
+        opacity : 0;
+    }
+    50%{
+        opacity : 0.5;
+    }
+    100%{
+        opacity : 1;
+    }
+}
+/*edit-insurance style*/
+
+.editinsco-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: #4663BE;
+}
+
+.editinsco-container{
+    width : 75%;
+    position : relative;
+    top : 10%;
+    display: flex;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #3f59ab, #4b6acb);
+    box-shadow:  20px 20px 60px #304483,
+             -20px -20px 60px #5c82f9;
+}
+form{
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+    width : 100%;
+}
+.left-editinsco{
+    width: 65%;
+    padding: 20px;
+}
+
+.left-editinsco > h1, h3{
+    color: whitesmoke;
+}
+.editinsco{
+    width : 100%;
+}
+
+.editinsco > .agreement, .nama, .kelengkapan, .keterangan, .submit{
+    grid-column: 1/span 2;
+}
+
+.agreement > input{
+    width: 195%;
+}
+
+.editinsco> label, input, select, textarea{
+    width : 98%;
+    row-gap: 2.5px;
+    padding : 5px;
+    border-radius: 8px;
+}
+
+.editinsco > label{
+    font-weight: bolder;
+    font-size: 1.2em;
+    color: whitesmoke;
+}
+
+.submit > a{
+    display: block;
+    width: 98%;
+    background-color: #85F1FE;
+    height: 35px;
+    color: black;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid white;
+    padding-top : 5px;
+    margin-top: 5px;
+    box-shadow: 2px 2px 6px #21AEE4 ;
+}
+
+.submit{
+    text-align: center;
+    margin-top : 11px;
+}
+
+.submit > input{
+    background-color: #21AEE4;
+    height: 35px;
+    color: whitesmoke;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.right-editinsco{
+    width : 35%;
+    background: url("/images/IMG-20220421-WA0053.jpg");
+    backdrop-filter:sepia(50px);
+    opacity: 0.5;
+    background-size: cover;
+    background-position : 15em 50%;
+    background-blend-mode:hard-light;
+    background-attachment:fixed;
+    border-top-right-radius: 45px;
+    border-bottom-right-radius: 45px;
+}

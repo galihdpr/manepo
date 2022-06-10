@@ -1,0 +1,313 @@
+/* Setting for all */
+*{
+    box-sizing: border-box;
+    margin : 0 auto;
+    padding : 0;
+}
+
+/* Color palate var*/
+:root{
+    --mysticOne : #4663BE;
+    --mysticTwo : #8DBAFE;
+    --mysticThre : #21AEE4;
+    --mysticFour : #85F1FE;
+}
+
+body{
+    font-family:monospace;
+    animation : fadeAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeAnimation{
+    0% {
+        opacity : 0;
+    }
+    50% {
+        opacity : 0.5;
+    }
+    100%{
+        opacity :1;
+    }
+}
+
+
+/* style for index -- dekstop version*/ 
+.main-wrapper{
+    background: rgb(70,99,190);
+    width : 100vw;
+    height: 100vh;
+    overflow : hidden;
+}
+
+.main-wrapper > .container{
+    display : flex;
+    justify-content: space-around;
+}
+
+.left-main, .right-main{
+    position : relative;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-main{
+    width : 50vw;
+}
+
+.right-main{
+    width : 40vw;
+}
+.left-main > h2{
+    font-size: 4rem;
+    color: whitesmoke;
+    flex-basis : 1rem;
+    position: relative;
+    top : 3em;
+}
+
+
+nav>.container{
+    display : flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: transparent;
+    position : absolute;
+    height: 15vh;
+    width : 100vw;
+    z-index: 1;
+}
+
+img{
+    width : 100%;
+    height: 100%;
+}
+
+#left-nav{
+    flex-basis : 20%;
+    margin : 0 0 0 1.5rem;
+}
+
+#right-nav{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    align-items: flex-end;
+}
+
+#right-nav > .btn{
+    padding : 15px;
+    font-size: 1.12rem;
+    font-weight: bolder;
+    border-radius: 45px;
+    background-color: #4663BE;
+    box-shadow: 24px 24px 48px #364c92, -24px -24px 48px #567aea;
+    text-decoration: none;
+    color : whitesmoke
+}
+
+.second-drop{
+    display: none;
+}
+
+.second-drop-show{
+    position : absolute;
+    background-color: rgba(133, 241, 254, 0.63);
+    display: flex;
+    border-top: none;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    width : 12em;
+    left: 60.2em;
+    top : 7.7em;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.second-drop-show a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.second-drop-show a:hover{
+    color : white;
+    text-decoration: underline;
+}
+
+#right-nav > .btn:hover{
+    text-decoration: underline;
+    background-color: white;
+    color: #4663BE;
+    border : 3px solid var(--mysticThre);
+}
+
+.right-main > h1{
+    font-size: 4em;
+    color: whitesmoke;
+}
+
+.right-main > h2{
+    color: whitesmoke;
+    font-size: 2rem;
+}
+
+#ops-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top : 1em;
+}
+
+#ops-wrapper > a{
+    text-decoration:none;
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    color: black;
+    font-weight: bold;
+    background: rgba(133, 241, 254, 0.44);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.9px);
+    -webkit-backdrop-filter: blur(5.9px);
+    border: 1px solid rgba(133, 241, 254, 0.63);
+}
+
+#ops-wrapper > a:hover{
+    color: whitesmoke;
+    text-decoration: underline;
+    /* From https://css.glass */
+    background: rgba(133, 241, 254, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.9px);
+    -webkit-backdrop-filter: blur(5.9px);
+    border: 1px solid rgba(133, 241, 254, 0.63);
+}
+
+.dropdownmenu{
+    position : absolute;
+    display : none;
+}
+
+.showdropmenu{
+    position : absolute;
+    display : flex;
+    flex-direction: column;
+    bottom : 16em;
+    right : 6.8em;
+    width : 10em;
+    padding: 0 auto;
+    background: rgba(133, 241, 254, 0.44);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.dropdownmenu a{
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.dropdownmenu a:hover{
+    color : white;
+    text-decoration: underline;
+}
+
+
+/*login styling*/
+
+.login-wrapper{
+    background: url("/images/4921280-removebg-preview.png");
+    background-repeat: repeat;
+    width : 100vw;
+    height: 100vh;
+}
+.login-card{
+    width : 40vw;
+    height: 50vh;
+    display : flex;
+    flex-direction: column;
+    background-color: white;
+    position :relative;
+    top : 25%;
+    justify-content: space-evenly;
+    border-radius: 14px;
+    padding : 20px auto;
+    border: 2px solid black;
+}
+
+.login-card h3{
+    font-size : 3em;
+    flex-basis : 25%;
+}
+.login-card form{
+    display : flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-basis : 75%;
+    width: 90%;
+}
+.login-card form p{
+    font-weight: bold;
+    font-size: 19px;
+    margin: 0 0;
+}
+.login-card form input{
+    height: 2em;
+    width: 100%;
+    border-radius: 12px;
+    padding : 1em;
+    font-size : 1em;
+}
+#login-submit{
+    background-color: var(--mysticOne);
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    padding : auto auto;
+    line-height: 50%;
+    cursor: pointer;
+}
+
+.login-card form input:focus{
+    background-color: var(--mysticFour);
+}
+
+#nologin-image{
+    width : 30vw;
+    height: 50vh;
+    position : relative;
+    left : 35em;
+    top : 8em;
+}
+
+.please-login{
+    position:relative;
+    left:35em;
+    top:9em;
+}
+
+.please-login h1{
+    font-size : 30px;
+}
+
+.please-login a{
+    text-decoration: none;
+    color : whitesmoke;
+    font-size: 15px;
+    background-color: #4663BE;
+    display: inline-block;
+    width : 20em;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    left : 4em;
+    border: 5px solid var(--mysticTwo);
+    border-radius: 10px;
+    box-shadow: 4px 3px 2px 2px var(--mysticFour);
+}

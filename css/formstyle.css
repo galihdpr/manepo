@@ -1,0 +1,197 @@
+/* Setting for all */
+*{
+    box-sizing: border-box;
+    margin : 0 auto;
+    padding : 0;
+}
+
+/* Color palate var*/
+:root{
+    --mysticOne : #4663BE;
+    --mysticTwo : #8DBAFE;
+    --mysticThre : #21AEE4;
+    --mysticFour : #85F1FE;
+}
+
+body{
+    font-family:monospace;
+    overflow:scroll;
+    overflow-x: hidden;
+    animation : fadeAnimation ease-in-out 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    position : relative;
+}
+
+@keyframes fadeAnimation{
+    0% {
+        bottom : 100vh;
+    }
+    100%{
+        bottom :0;
+    }
+}
+
+.form-wrapper{
+    width : 100vw;
+    display : flex;
+}
+
+.form-content{
+    background-color: var(--mysticFour);
+    flex-basis: 80%;
+    padding : 5% 20px;
+    width : 100%;
+}
+
+.img-side{
+    flex-basis: 20%;
+    background-color: var(--mysticTwo);
+}
+
+.form-content > h1{
+    font-size: 1.5rem;
+}
+
+.form-content > h3{
+    letter-spacing: 1.3px;
+    opacity: 0.4;
+}
+
+form{
+    margin-top: 1%;
+    width : 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding : 0 15px;
+}
+
+label{
+    font-weight:bold;
+}
+
+.form{
+    display : flex;
+    flex-direction: column;
+    width: 100%;
+    margin : 0.5em 0;
+}
+
+.form > label, input, select{
+    width : 100%;
+    padding : 10px;
+    margin : 0 10px;
+}
+
+.form > label{
+    font-size : 1.13rem;
+}
+
+.form > input, select{
+    font-family: monospace;
+    font-weight: bold;
+    border-radius: 12px;
+}
+
+.submit > input{
+    margin-top : 10px;
+    background-color: var(--mysticOne);
+    color: var(--mysticFour);
+    font-size: larger;
+    font-weight: bold;
+    border : none;
+    box-shadow: 1px 1px 2px 2px black;
+}
+
+.submit > input:hover{
+    opacity: 0.5;
+    cursor:pointer;
+}
+
+.submit > input:focus{
+    opacity : 1;
+    box-shadow: 0 0 0 0;
+}
+
+.img-side > img{
+    height: 24.7%;
+    width : 100%;
+}
+
+.submit{
+    text-align: center;
+}
+#return-btn{
+    width: 100%;
+    margin: 10px 0 10px 10px;
+    padding-top: 5px;
+    background-color: #8DBAFE;
+    height: 2.5rem;
+    font-size: 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+textarea{
+    width: 100%;
+    height: 5em;
+    margin: 10px 0 10px 10px;
+    border-radius : 5px;
+    padding : 1em;
+}
+
+.edit-form-card{
+    width: 80%;
+    margin : 10% auto;
+    background-color: var(--mysticThre);
+    border-radius: 15px;
+    padding : 1rem;
+}
+
+#edit-form{
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    row-gap: 1rem;
+}
+
+.edit-form > input, select{
+    border: 2px solid var(--mysticFour);
+    border-radius: 12px;
+}
+.agreement, .nama, .cmo, .submit{
+    grid-column: 1/span 2;
+    width : 100%;
+}
+.dealer, .status, .cetak, .ambil{
+    width : 95%;
+}
+
+.submit > a{
+    display : block;
+    grid-column: 1/span 2;
+    width : 100%;
+    background-color: var(--mysticFour);
+    height: 2.5em;
+    line-height: 50%;
+    margin-top : 1em;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: black;
+    padding: 11px;
+    margin-left:10px;
+    border-radius:12px;
+    border: 2px solid var(--mysticOne);
+    box-shadow: 1px 1px 2px 2px black;
+}
+
+.submit > a:hover{
+    opacity: 0.6;
+}
+
+.submit > a:active{
+    box-shadow: 0 0 0 0;
+}
