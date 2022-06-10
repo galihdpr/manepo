@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>INSCO TRACKER - MANEPO</title>
+        <meta charset = "utf-8">
+        <meta name = "description" content="Manepo adalah one stop solution untuk seluruh keperluan dokumen yang merepotkan">
+        <meta name = "keywords" content="html, css, ejs, javascript, node js, express, mysql, crud">
+        <meta name = "author" content="gadev">
+        <meta name = "application-name" content="MANEPO">
+        <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
+        <link rel="stylesheet" href="/css/display-style.css"> <!--css reguler-->
+        <link rel="styleshee" href="#"> <!--css responsive-->
+        <script src="https://kit.fontawesome.com/80167f1830.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class = "display-wrapper">
+            <div class = "top-section">
+                <div class = "left-top">
+                    <form id = "search-bar" action = "#" method="POST">
+                        <span><button type="submit"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button></span>
+                        <input type="text" placeholder="Search...." name="search">
+                    </form>
+                </div>
+                <div class = "right-top">
+                    <div class = "home-button">
+                        <a id = "back-to-home" href="/"><i class="fa-solid fa-house fa-2xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class = "bottom-section"></div>
+            <div class = "table-section">
+                <div class = "top-table">
+                    <div class = "left-top-table">
+                        <ul>
+                            <li>All Claim</li>
+                            <li>Approved</li>
+                            <li>Rejected</li>
+                            <li>Appeal</li>
+                        </ul>
+                    </div>
+                    <div class = "right-top-table">
+                        <a href = "/inputinsco2"><i class="fa-solid fa-plus">Add Claim</i></a>
+                    </div>
+                </div>
+                <div class = "bottom-table">
+                    <table>
+                        <tr>
+                            <th>No Kontrak</th>
+                            <th>Nama Customer</th>
+                            <th>Insco</th>
+                            <th>Tanggal Report</th>
+                            <th>Nama Pelapor</th>
+                            <th>Hubungan dengan Debitur</th>
+                            <th>Bengkel</th>
+                            <th>Tanggal Kejadian</th>
+                            <th>Kelengkapan</th>
+                            <th>Keterangan</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <% inscolist.forEach((insco)=>{ %>
+                            <tr>
+                                <td> <%= insco.agreement %></td>
+                                <td> <%= insco.customer_name %></td>
+                                <td> <%= insco.insco %></td>
+                                <td> <%= insco.tgl_report_claim %></td>
+                                <td> <%= insco.pelapor %></td>
+                                <td> <%= insco.relasi_pelapor %></td>
+                                <td> <%= insco.bengkel %></td>
+                                <td> <%= insco.tgl_kejadian %></td>
+                                <td> <%= insco.kelengkapan %> </td>
+                                <td> <%= insco.keterangan %></td>
+                                <td>
+                                    <form action="/deleteinsco2/<%=insco.claim_u_id%>" method="post">
+                                        <input type="submit" value="Delete">
+                                    </form>
+                                </td>
+                                <td><a href="/editinsco2/<%=insco.claim_u_id %>">EDIT</a></td>
+                            </tr>
+                        <% }) %> 
+                        <tr>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>    
+        </div>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manepo - Fast and Easy for Your Office</title>
+        <meta charset = "utf-8">
+        <meta name = "description" content="Manepo adalah one stop solution untuk seluruh keperluan dokumen yang merepotkan">
+        <meta name = "keywords" content="html, css, ejs, javascript, node js, express, mysql, crud">
+        <meta name = "author" content="gadev">
+        <meta name = "application-name" content="MANEPO">
+        <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
+        <link rel="stylesheet" href="/css/manepo-style.css"> <!--css reguler-->
+        <link rel="stylesheet" href="#"> <!--css responsive-->
+    </head>
+    <body>
+        <nav>
+            <div class ="container">
+                <div id="left-nav">
+                    <img src="/images/logo-mtf-white.png">
+                </div>
+                <div id="right-nav">
+                    <a class = "track btn" href="/displaypo">PO Tracking</a>
+                    <a  href="#" class = "track btn" onclick="secondDrop();return false;">Insurance Tracking</a>
+                    <% if(locals.isLoggedIn){ %>
+                    <a class = "login btn" href="/logout">LOGOUT</a>
+                    <% }else{ %>
+                    <a class = "login btn" href="/login">LOGIN</a>
+                    <% } %>
+                    <div class = "second-drop" id="second-drop-menu">
+                        <a href="/displayinsco1" class = "menu-drop">JIWA</a>
+                        <a href="/displayinsco2" class = "menu-drop">UNIT</a>
+                    </div>
+                </div>
+                <script>
+                    function secondDrop(){
+                        const dropSec = document.getElementById('second-drop-menu');
+                        dropSec.classList.toggle('second-drop-show');
+                    }
+                </script>
+            </div>
+        </nav>
+        <div class = "main-wrapper">
+            <div class = "container">
+                <div class = "left-main">
+                    <h2>MANEPO</h2>
+                    <img src = "/images/icon-top-left.png">
+                </div>
+                <div class = "right-main">
+                    <h1>KERJA DIBUAT GAMPANG</h1>
+                    <h2>Halo, <%=locals.userName%> </h2>
+                    <h2>Mau urus apa hari ini?</h2>
+                    <div id = "ops-wrapper">
+                        <a href ="/inputpo" type = "button" <!--onclick="function()" class = "ops">PO</a>
+                        <a href = "#" class = "ops" onclick="myDropMenu();return false;">ASURANSI</a>
+                        <div class = "dropdownmenu" id = "dropdown-insco">
+                            <a href = "/inputinsco1">JIWA</a>
+                            <a href = "/inputinsco2">UNIT</a>
+                        </div>
+                    </div>
+                    <script>
+                        /* when user click the button, toggle between hiding and showing dropdown menu*/
+                        function myDropMenu(){
+                            const drop = document.getElementById('dropdown-insco');
+                            drop.classList.toggle('showdropmenu');
+                        }    
+                    </script>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

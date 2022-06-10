@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PO Tracker - MANEPO</title>
+        <meta charset = "utf-8">
+        <meta name = "description" content="Manepo adalah one stop solution untuk seluruh keperluan dokumen yang merepotkan">
+        <meta name = "keywords" content="html, css, ejs, javascript, node js, express, mysql, crud">
+        <meta name = "author" content="gadev">
+        <meta name = "application-name" content="MANEPO">
+        <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
+        <link rel="stylesheet" href="/css/editform-style.css"> <!--css reguler-->
+        <link rel="styleshee" href="#"> <!--css responsive-->
+        <script src="https://kit.fontawesome.com/80167f1830.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class = "editform-wrapper">
+            <div class = "edit-form-card">
+                <h1>Edit Data Purchasing Order</h1>
+                <h3>Mohon pastikan seluruh nilai (terutama dealer dan tanggal) sudah sesuai</h3>
+                <form id = "edit-form" action="/updatepo/<%=polist.po_id%>" method="post">
+                    <div class = "edit-form agreement">
+                        <label for = "agreement">No Kontrak</label></br>
+                        <input type="text" id = "agreement" name="agreement" value="<%=polist.agreement %>"  maxlength="10" pattern="[1-9]{3}[0-9]{7}" title="mohon isi dengan format kontrak 559xxxxxxx. WAJIB ANGKA" required>
+                    </div>
+                    <div class = "edit-form nama">
+                        <label for="customer_name">Nama Customer</label></br>
+                        <input type="text" id = "customer_name" name="customer_name" placeholder="NAMA LENGKAP CUSTOMER" maxlength="30" required value="<%=polist.customer_name %>">
+                    </div>
+                    <div class = "edit-form cmo">
+                        <label for="cmo">CMO</label></br>
+                        <select id = "cmo" name="cmo" required>
+                            <option value="Adrian Safputra">Adrian Safputra</option>
+                            <option value="Ahmad Radius">Ahmad Radius</option>
+                            <option value="Agus Johriadi">Agus Johriadi</option>
+                            <option value="Deby Kurniawan">Deby Kurniawan</option>
+                            <option value="Kurniadi">Kurniadi</option>
+                            <option value="Muhammad Firdaus">Muhammad Firdaus</option>
+                            <option value="Zakarya">Zakarya</option>
+                        </select>
+                    </div>
+                    <div class="edit-form dealer">
+                        <label for="dealer">Dealer</label></br>
+                        <select id = "dealer" name="dealer" required>
+                            <option value="ANZON-TYT-KTP">ANZON-TYT-KTP</option>
+                            <option value="ANZON-TYT-PTK">ANZON-TYT-PTK</option>
+                            <option value="BAC-ISUZU">BAC-ISUZU</option>
+                            <option value="TMS-DAIHATSU-KTP">TMS-DAIHATSU-KTP</option>
+                            <option value="TMS-DAIHATSU-PTK">TMS-DAIHATSU-PTK</option>
+                            <option value="TMS-DAIHATSU-STG">TMS-DAIHATSU-STG</option>
+                            <option value="HINO-PTK">HINO-PTK</option>
+                            <option value="HONDA-SMG">HONDA-SMG</option>
+                        </select>
+                    </div>
+                    <div class="edit-form status">
+                        <label for="status_po">Status PO</label></br>
+                        <select id = "status_po" name="status_po" required>
+                            <option value="Belum Diambil" selected>Belum Diambil</option>
+                            <option value="Sudah Diambil">Sudah Diambil</option>
+                            <option value="Cancel">Cancel</option>
+                        </select>
+                    </div>
+                    <div class = "edit-form cetak">
+                        <label for="tgl_cetak_po">Tanggal Cetak PO</label></br>
+                        <input type="datetime" id="tgl_cetak_po" name="tgl_cetak_po" value="<%=polist.tgl_cetak_po %>" readonly>
+                    </div>
+                    <div class="edit-form ambil">
+                        <label for="tgl_ambil_po">Tanggal Ambil PO</label></br>
+                        <input type="datetime-local" id="tgl_ambil_po" name="tgl_ambil_po">
+                    </div>
+                    <div class = "edit-form submit">
+                        <input type="submit" value="submit">
+                        <a href="/" id = "edit-return-btn">Back to home  <span><i class="fa fa-house-chimney"></i></span></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

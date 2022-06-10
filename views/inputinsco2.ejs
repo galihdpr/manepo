@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PO Tracker - MANEPO</title>
+        <meta charset = "utf-8">
+        <meta name = "description" content="Manepo adalah one stop solution untuk seluruh keperluan dokumen yang merepotkan">
+        <meta name = "keywords" content="html, css, ejs, javascript, node js, express, mysql, crud">
+        <meta name = "author" content="gadev">
+        <meta name = "application-name" content="MANEPO">
+        <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
+        <link rel="stylesheet" href="/css/formstyle.css"> <!--css reguler-->
+        <link rel="styleshee" href="#"> <!--css responsive-->
+        <script src="https://kit.fontawesome.com/80167f1830.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class = "form-wrapper">
+            <div class = "form-content">
+                <h1>Insurance Claim Registration Form</h1>
+                <h3>Lakukan penginputan laporan klaim asuransi baru di bawah ini</h3>
+                <form action="/inputinsco2" method = "POST">
+                    <div class = "form agreement">
+                        <label for = "agreement">No Kontrak</label>
+                        <input type="text" id = "agreement" name="agreement" maxlength="10" pattern="[1-9]{3}[0-9]{7}" title="mohon isi dengan format kontrak 559xxxxxxx. WAJIB ANGKA" required>
+                    </div>
+                    <div class = "form nama">
+                        <label for = "customer_name">Nama Customer</label>
+                        <input type="text" id = "customer_name" name="customer_name" required>
+                    </div>
+                    <div class = "form vendor">
+                        <label for="insco">Perusahaan Asuransi Penanggung</label>
+                        <select id = "insco" name="insco" required>
+                            <option value="Cakrawala">Cakrawala</option>
+                            <option value="Tugu">Tugu</option>
+                            <option value="Sinar Mas">Sinar Mas</option>
+                            <option value="BESS">BESS</option>
+                            <option value="Staco">Kurniadi</option>
+                        </select>
+                    </div>
+                    <div class="form bengkel">
+                        <label for="bengkel">Bengkel Rekanan</label>
+                        <select id = "bengkel" name="bengkel" required>
+                            <option value="benkgel 1">Bengkel 1</option>
+                            <option value="bengkel 2">Bengkel 2</option>
+                        </select>
+                    </div>
+                    <div class = "form tanggal-report">
+                        <label for="tgl_report_claim">Tanggal Pelaporan</label>
+                        <input type="datetime-local" id="tgl_report_claim" name="tgl_report_claim">
+                    </div>
+                    <div class="form nama-pelapor">
+                        <label for="pelapor">Nama Pelapor</label>
+                        <input type="text" id="pelapor" name="pelapor" required>
+                    </div>
+                    <div class = "form relasi-debitur">
+                        <label for="relasi_pelapor">Relasi dengan Debitur</label>
+                        <select id="relasi_pelapor" name="relasi_pelapor" required>
+                            <option value="Orang Tua">Orang Tua</option>
+                            <option value="Saudara">Saudara</option>
+                            <option value="Pasangan">Pasangan</option>
+                            <option value="Anak">Anak</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
+                    </div>
+                    <div class = "form tgl-kejadian">
+                        <label for="tgl_kejadian">Tanggal Kejadian</label>
+                        <input type="datetime-local" id="tgl_kejadian" name="tgl_kejadian">
+                    </div>
+                    <div class = "form kelengkapan">
+                        <label for="kelengkapan">Kelengkapan Dokumen</label>
+                        <select id="kelengkapan" name="kelengkapan">
+                            <option value="LENGKAP">Lengkap</option>
+                            <option value="BELUM LENGKAP">Belum Lengkap</option>
+                        </select>
+                    </div>
+                    <div class="form keterangan">
+                        <label for="keterangan">Detail Laporan</label>
+                        <textarea id="keterangan" name="keterangan"></textarea>
+                    </div>
+                    <div class = "form submit">
+                        <input type="submit" value="register">
+                        <a href="/" id = "return-btn">Back to home <span><i class="fa fa-house-chimney"></i></span></a>
+                    </div>
+                </form>
+            </div>
+        <div class = "img-side">
+                <img src="/images/foto_id_card_desy-removebg-preview.png">
+                <img src="/images/galih-removebg-preview.png">
+                <img src="/images/foto_id_card_desy-removebg-preview.png">
+                <img src="/images/galih-removebg-preview.png">
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PO Tracker - MANEPO</title>
+        <meta charset = "utf-8">
+        <meta name = "description" content="Manepo adalah one stop solution untuk seluruh keperluan dokumen yang merepotkan">
+        <meta name = "keywords" content="html, css, ejs, javascript, node js, express, mysql, crud">
+        <meta name = "author" content="gadev">
+        <meta name = "application-name" content="MANEPO">
+        <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
+        <link rel="stylesheet" href="/css/editFormInsco-style.css"> <!--css reguler-->
+        <link rel="styleshee" href="#"> <!--css responsive-->
+        <script src="https://kit.fontawesome.com/80167f1830.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class = "editinsco-wrapper">
+            <div class = "editinsco-container">
+                <div class = "left-editinsco">
+                    <h1>Edit Insurance Claim Registration Form</h1>
+                    <h3>Pastikan kembali setiap inputan telah sesuai ya</h3>
+                    <form id = "editinsco-form" action="/updateinsco1/<%=claimlist.claim_j_id %>" method = "POST">
+                        <div class = "editinsco agreement">
+                            <label for = "agreement">No Kontrak</label></br>
+                            <input type="text" id = "agreement" name="agreement" maxlength="10" pattern="[1-9]{3}[0-9]{7}" title="mohon isi dengan format kontrak 559xxxxxxx. WAJIB ANGKA" required value="<%= claimlist.agreement %>">
+                        </div>
+                        <div class = "editinsco nama">
+                            <label for = "customer_name">Nama Customer</label></br>
+                            <input type="text" id = "customer_name" name="customer_name" required value="<%= claimlist.customer_name %>">
+                        </div>
+                        <div class = "editinsco vendor">
+                            <label for="insco">Insco</label></br>
+                            <select id = "insco" name="insco" required>
+                                <option value="Cakrawala">Cakrawala</option>
+                                <option value="Tugu">Tugu</option>
+                                <option value="Sinar Mas">Sinar Mas</option>
+                                <option value="BESS">BESS</option>
+                                <option value="Staco">Staco</option>
+                            </select>
+                        </div>
+                        <div class = "editinsco tanggal-report">
+                            <label for="tgl_report_claim">Tanggal Pelaporan</label></br>
+                            <input type="datetime" id = "tgl_report_claim" name="tgl_report_claim" value="<%= claimlist.tgl_report_claim %>">
+                        </div>
+                        <div class="editinsco nama-pelapor">
+                            <label for="pelapor">Nama Pelapor</label></br>
+                            <input type="text" id="pelapor" name="pelapor" required value="<%= claimlist.pelapor %>">
+                        </div>
+                        <div class = "editinsco relasi-debitur">
+                            <label for="relasi_pelapor">Hubungan Debitur</label></br>
+                            <select id="relasi_pelapor" name="relasi_pelapor" required>
+                                <option value="Orang Tua">Orang Tua</option>
+                                <option value="Saudara">Saudara</option>
+                                <option value="Pasangan">Pasangan</option>
+                                <option value="Anak">Anak</option>
+                                <option value="Lainnya">Lainnya</option>
+                            </select>
+                        </div>
+                        <div class = "editinsco sebab-meninggal">
+                            <label for = "penyebab_meninggal">Penyebab Meninggal</label>
+                            <select id = "penyebab_meninggal" name="penyebab_meninggal" required>
+                                <option value="Sakit">Sakit</option>
+                                <option value="Non-Sakit">Selain sakit</option>
+                            </select>
+                        </div>
+                        <div class = "editinsco lokasi-meninggal">
+                            <label for="meninggal_di">Lokasi Meninggal</label>
+                            <select id = "meninggal_di" name="meninggal_di">
+                                <option value="Rumah Sakit">Rumah Sakit</option>
+                                <option value="Non-RS">Non-RS (Rumah, jalanan, perjalanan ke RS)</option>
+                            </select>
+                        </div>    
+                        <div class = "editinsco kelengkapan">
+                            <label for="kelengkapan">Kelengkapan Dokumen</label></br>
+                            <select id="kelengkapan" name="kelengkapan">
+                                <option value="LENGKAP">Lengkap</option>
+                                <option value="BELUM LENGKAP">Belum Lengkap</option>
+                            </select>
+                        </div>
+                        <div class="editinsco keterangan">
+                            <label for="keterangan">Detail Laporan</label></br>
+                            <textarea id="keterangan" name="keterangan"> <%= claimlist.keterangan %> </textarea>
+                        </div>
+                        <div class = "editinsco submit">
+                            <input type="submit" value="Update">
+                            <a href="/" id = "return-btn">Back to home <span><i class="fa fa-house-chimney"></i></span></a>
+                        </div>
+                    </form>
+                </div>
+                <div class = "right-editinsco"></div>
+            </div>
+        </div>
+    </body>
+</html>
