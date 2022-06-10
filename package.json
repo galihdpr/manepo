@@ -1,0 +1,29 @@
+{
+  "name": "manepo",
+  "version": "1.0.0",
+  "description": "manepo order and business document tracking",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "javascript",
+    "express",
+    "mysql",
+    "database",
+    "crud"
+  ],
+  "author": "gadev",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "js-yaml": "^4.1.0",
+    "mysql2": "^2.3.3"
+  }
+}
